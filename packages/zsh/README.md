@@ -11,6 +11,14 @@ tar -xf zsh.tar.xz
 make && make install
 ```
 
+add the following in `.bash_profile` to make zsh the default shell
+```
+#.bash_profile
+#set zsh as default
+[ -f $HOME/bin/zsh ] && exec $HOME/bin/zsh -1
+```
+
+
 install oh my zsh
 ```
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
