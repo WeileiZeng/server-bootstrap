@@ -10,3 +10,11 @@ tar -xf zsh.tar.xz
 ./configure --prefix=/home/weileizeng/.local
 make && make install
 ```
+
+install oh my zsh
+```
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+ref:
+https://gist.github.com/ZhaofengWu/f345652e994e3b68c309352a7610460f
