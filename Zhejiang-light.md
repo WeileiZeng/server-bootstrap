@@ -4,14 +4,20 @@ extra notes for zhejiang light
 # download this repo
 wget https://github.com/WeileiZeng/server-bootstrap/archive/refs/heads/main.zip
 
-
+# install everything into DIR folder
 DIR="$HOME/.local"
-export PATH="${PATH};/home/export/online1/aiuser/zj_zhengwl/.local/bin"
 
+# optional: add these into .bashrc
+export PATH="${PATH};${HOME}/.local/bin"
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH:$HOME/.local/lib
 
 # for ncurse
 ./configure --prefix=$HOME/.local CPPFLAGS="-P" CFLAGS="-I$DIR/include" LDFLAGS="-L$DIR/lib" --disable-unicode
 
 #for tmux
 ./configure --prefix=$HOME/.local CPPFLAGS="-P -I$DIR/include/ncurses" CFLAGS="-I$DIR/include" LDFLAGS="-L$DIR/lib"
+
+#for emacs
+
+./configure --prefix=$HOME/.local --with-gnutls=ifavailable  CPPFLAGS="-P -I$DIR/include/ncurses" CFLAGS="-I$DIR/include" LDFLAGS="-L$DIR/lib"
 ```
